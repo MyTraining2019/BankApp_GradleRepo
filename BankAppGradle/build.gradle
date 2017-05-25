@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'sonar-runner'
 
 group = 'BankAppGradle'
 version = '0.0.1-SNAPSHOT'
@@ -19,3 +20,12 @@ dependencies {
 task wrapper(type: Wrapper){
 	gradleVersion = '3.0'
 }
+
+
+sonarRunner {
+	sonarProperties {
+		property "sonar.projectName", "BankApp_Gradle"
+		property "sonar.projectKey", "org.sonarqube:java-gradle-simple"
+	}
+}
+
